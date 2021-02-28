@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import useSound from 'use-sound'
 import '../components/common/global.scss'
 import owlSFX from '../sounds/sova.wav'
+import forestSFX from '../sounds/les.wav'
 import batSFX from '../sounds/netopyr.wav'
 import sheepSFX from '../sounds/ovce.wav'
 import sheep2SFX from '../sounds/ovce2.wav'
@@ -17,9 +18,12 @@ const IndexPage = () => {
     const [ playSheep2 ] = useSound(sheep2SFX)
     const [ playWolf ] = useSound(wolfSFX)
     const [ playWolf2 ] = useSound(wolf2SFX)
+    const [ playForest ] = useSound(forestSFX, { volume: .3 })
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
+    const [ forestPlaying, setForestPlaying ] = useState(false)
+
 
     useEffect(() => {
         setTimeout(() => setIsLoading(false), 8000)
@@ -37,6 +41,12 @@ const IndexPage = () => {
         }, 200)
     }
 
+    const handleMouseEnter = () => {
+        if(forestPlaying) return
+        playForest()
+        setForestPlaying(true)
+    }
+
     return (
         <main className="buk">
             <title>Home Page</title>
@@ -47,7 +57,7 @@ const IndexPage = () => {
                 </div>
             )}
 
-            <div className="scene">
+            <div className="scene" onMouseEnter={handleMouseEnter}>
                 <div className={classNames(['obj bg', isFullMoon && 'uplnek'])}>
                     <img src="/img/pozadi.png" alt=""/>
                 </div>

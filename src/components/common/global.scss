@@ -58,10 +58,10 @@ p {
   }
 
   @keyframes bounce {
-    0% { transform: scale(0.8); color: #5c1536; }
-    33% { transform: scale(1); color: #dc1657; }
-    66% { transform: scale(0.8); color: #5c1536; }
-    100% { transform: scale(1); color: #dc1657; }
+    0% { transform: scale(1); color: #5c1536; opacity: 1; }
+    33% { transform: scale(.8); color: #5c1536; opacity: 1; }
+    66% { transform: scale(1.5); color: #dc1657; opacity: 0; }
+    100% { transform: scale(1.5); color: #dc1657; opacity: 0; }
   }
 
   @keyframes fadeOut {
@@ -94,16 +94,58 @@ p {
     position: absolute;
   }
 
+  .bg, .fg, .kopec1, .kopec2 {
+    pointer-events: none;
+  }
+
   .bg {
     top: 0;
     left: 0;
     width: 100%;
+
+    &.uplnek:after, &.uplnek:before {
+      opacity: 0;
+    }
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      transition: 1s ease;
+    }
+
+    &:after {
+      opacity: .5;
+    }
+
+    &:before {
+      opacity: .4;
+      z-index: 99;
+    }
   }
 
   .fg {
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+  .mesic {
+    width: 6.157635%;
+    height: 12.315271%;
+    top: 13.5%;
+    left: 36.33%;
+    border-radius: 50%;
+    //background: black;
+    //opacity: 1;
+
+    &.uplnek {
+      //opacity: 0;
+    }
   }
 
   .kopec1 {
@@ -118,8 +160,104 @@ p {
     height: 0.105152%;
     left: 41%;
     top: 40%;
+  }
+
+  .ovce1 {
+    width: 17.31835%;
+    height: 36.330049%;
+    top: 60%;
+    left: 16%;
+    animation: breathe 3s infinite;
+    transform-origin: 50% 100%;
+  }
+
+  .ovce2 {
+    width: 14.19335%;
+    height: 28.078818%;
+    top: 46%;
+    left: 5%;
+    animation: breathe 3.3s infinite .5s;
+    transform-origin: 50% 100%;
+  }
+
+  .sova {
+    width: 8.636084%;
+    height: 13.823892%;
+    top: 64.7%;
+    left: 54.3%;
+    animation: breathe 3s infinite .2s;
+    transform-origin: 50% 100%;
+  }
+
+  .netopyr {
+    width: 5.080049%;
+    height: 19.673645%;
+    top: 9%;
+    left: 58.5%;
+    animation: breathe 3s infinite;
+    transform-origin: 50% 0;
+  }
+
+  .vlk {
+    width: 19.950739%;
+    height: 40.024631%;
+    top: 34.5%;
+    left: 67%;
+    animation: breathe 3s infinite .2s;
+    transform-origin: 50% 100%;
+  }
+
+  .vlk2 {
+    width: 5.557266%;
+    height: 14.963054%;
+    top: 28.5%;
+    left: 6.5%;
+    animation: breathe 3s infinite;
+    transform-origin: 50% 100%;
+  }
+
+  .hradec {
+    width: 10.544951%;
+    height: 27.555419%;
+    left: 23%;
+    top: 15.4%;
+  }
+
+  .karkulka {
+    width: 1.616379%;
+    height: 5.295567%;
+    left: 36%;
+    top: 50.4%;
+    animation: walk 1s infinite;
+    transform-origin: 50% 100%;
+  }
+
+  .hrib1 {
+    width: 5.15702%;
+    height: 11.391626%;
+    left: 41%;
+    top: 67.4%;
+  }
+
+  .hrib2 {
+    width: 3.55713%;
+    height: 6.434729%;
+    left: 46%;
+    top: 71.4%;
     //max 6496 x 3248
-    //2371 × 951
+    //231 × 209
+  }
+
+  @keyframes walk {
+    0% { transform: rotate(-4deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-4deg); }
+  }
+
+  @keyframes breathe {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+    100% { transform: scale(1); }
   }
 
 }

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "classnames": "^2.2.6",
     "gatsby": "^2.32.8",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",

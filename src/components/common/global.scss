@@ -85,6 +85,7 @@ p {
   height: calc(100 * var(--vh));
   background: white;
   animation: scene 6s forwards 4s;
+  //transform: scale(1.05);
 
   @keyframes scene {
     0% { transform: translateY(-20%) }
@@ -96,12 +97,23 @@ p {
     width: 100%;
   }
 
+  .anim {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .obj {
     position: absolute;
   }
 
-  .bg, .fg, .kopec1, .kopec2 {
-    pointer-events: none;
+  .obj {
+    pointer-events: all;
+  }
+
+  .anim, .bg, .fg, .kopec1, .kopec2 {
+    pointer-events: none !important;
   }
 
   .bg {

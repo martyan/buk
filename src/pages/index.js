@@ -9,11 +9,12 @@ import sheepSFX from '../sounds/ovce.wav'
 import sheep2SFX from '../sounds/ovce2.wav'
 import wolfSFX from '../sounds/vlk.mp3'
 import wolf2SFX from '../sounds/vlk2.mp3'
+import { useSpring, animated } from 'react-spring'
 
 let resizeTimeout = null
 const IndexPage = () => {
     const [ playOwl ] = useSound(owlSFX)
-    const [ playBat ] = useSound(batSFX)
+    const [ playBat ] = useSound(batSFX, { volume: .3 })
     const [ playSheep ] = useSound(sheepSFX)
     const [ playSheep2 ] = useSound(sheep2SFX)
     const [ playWolf ] = useSound(wolfSFX)
@@ -47,6 +48,12 @@ const IndexPage = () => {
         setForestPlaying(true)
     }
 
+    const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
+    const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
+    const trans1 = (x, y) => `translate3d(${x / 500}px,${y / 500}px,0)`
+    const trans2 = (x, y) => `translate3d(${x / 200}px,${y / 200}0px,0)`
+    const trans3 = (x, y) => `translate3d(${x / 100}px,${y / 100}0px,0)`
+
     return (
         <main className="buk">
             <title>Home Page</title>
@@ -57,52 +64,79 @@ const IndexPage = () => {
                 </div>
             )}
 
-            <div className="scene" onMouseEnter={handleMouseEnter}>
+            <div className="scene" onMouseEnter={handleMouseEnter} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
                 <div className={classNames(['obj bg', isFullMoon && 'uplnek'])}>
                     <img src="/img/pozadi.png" alt=""/>
                 </div>
-                <div className="obj kopec2">
-                    <img src="/img/kopec2.png" alt=""/>
-                </div>
-                <div className="obj hradec">
-                    <img src="/img/hrad.png" alt=""/>
-                </div>
-                <div className="obj kopec1">
-                    <img src="/img/kopec.png" alt=""/>
-                </div>
-                <div className="obj fg">
-                    <img src="/img/popredi.png" alt=""/>
-                </div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans1) }}>
+                    <div className="obj kopec2">
+                        <img src="/img/kopec2.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj hradec">
+                        <img src="/img/hrad.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj kopec1">
+                        <img src="/img/kopec.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj fg">
+                        <img src="/img/popredi.png" alt=""/>
+                    </div>
+                </animated.div>
 
                 <div className={classNames(['obj mesic', isFullMoon && 'uplnek'])} onClick={() => setIsFullMoon(!isFullMoon)}></div>
 
-                <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci'])} onClick={() => setIsOnTheHill(!isOnTheHill)}>
-                    <img src="/img/karkulka.png" alt=""/>
-                </div>
-                <div className="obj ovce1" onClick={playSheep}>
-                    <img src="/img/ovce.png" alt=""/>
-                </div>
-                <div className="obj ovce2" onClick={playSheep2}>
-                    <img src="/img/ovce2.png" alt=""/>
-                </div>
-                <div className="obj sova" onClick={playOwl}>
-                    <img src="/img/sova.png" alt=""/>
-                </div>
-                <div className="obj netopyr" onClick={playBat}>
-                    <img src="/img/netopyr.png" alt=""/>
-                </div>
-                <div className="obj vlk" onClick={playWolf}>
-                    <img src="/img/vlk.png" alt=""/>
-                </div>
-                <div className="obj vlk2" onClick={playWolf2}>
-                    <img src="/img/vlk2.png" alt=""/>
-                </div>
-                <div className="obj hrib1">
-                    <img src="/img/hrib.png" alt=""/>
-                </div>
-                <div className="obj hrib2">
-                    <img src="/img/hrib2.png" alt=""/>
-                </div>
+                <animated.div className="anim" onClick={() => setIsOnTheHill(!isOnTheHill)} style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci'])}>
+                        <img src="/img/karkulka.png" alt=""/>
+                    </div>
+                </animated.div>
+
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj ovce1" onClick={playSheep}>
+                        <img src="/img/ovce.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj ovce2" onClick={playSheep2}>
+                        <img src="/img/ovce2.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj sova" onClick={playOwl}>
+                        <img src="/img/sova.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj netopyr" onClick={playBat}>
+                        <img src="/img/netopyr.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj vlk" onClick={playWolf}>
+                        <img src="/img/vlk.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj vlk2" onClick={playWolf2}>
+                        <img src="/img/vlk2.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj hrib1">
+                        <img src="/img/hrib.png" alt=""/>
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
+                    <div className="obj hrib2">
+                        <img src="/img/hrib2.png" alt=""/>
+                    </div>
+                </animated.div>
             </div>
         </main>
     )

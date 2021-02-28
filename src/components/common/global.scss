@@ -48,13 +48,13 @@ p {
   justify-content: center;
   align-items:center;
   background: black;
-  animation: fadeOut 5s forwards ease-out;
+  animation: fadeOut 8s forwards ease-out;
 
   h1 {
     font-size: 4em;
     letter-spacing: 2px;
     color: #dc1657;
-    animation: bounce 5s forwards ease-out;
+    animation: bounce 8s forwards ease-out;
   }
 
   @keyframes bounce {
@@ -84,6 +84,12 @@ p {
   width: calc(200 * var(--vh));
   height: calc(100 * var(--vh));
   background: white;
+  animation: scene 6s forwards 4s;
+
+  @keyframes scene {
+    0% { transform: translateY(-20%) }
+    100% { transform: translateY(0) }
+  }
 
   img {
     display: block;
@@ -140,6 +146,7 @@ p {
     top: 13.5%;
     left: 36.33%;
     border-radius: 50%;
+    cursor: pointer;
     //background: black;
     //opacity: 1;
 
@@ -153,13 +160,25 @@ p {
     height: 61.422414%;
     left: 0;
     top: 26%;
+    animation: kopec 5s forwards 4s;
+
+    @keyframes kopec {
+      0% { transform: translateY(70%) }
+      100% { transform: translateY(0) }
+    }
   }
 
   .kopec2 {
     width: 36.499384%;
-    height: 0.105152%;
+    height: 10.5152%;
     left: 41%;
     top: 40%;
+    animation: kopec2 5s forwards 4s;
+
+    @keyframes kopec2 {
+      0% { transform: translateY(500%) }
+      100% { transform: translateY(0) }
+    }
   }
 
   .ovce1 {
@@ -167,7 +186,7 @@ p {
     height: 36.330049%;
     top: 60%;
     left: 16%;
-    animation: breathe 3s infinite;
+    animation: breathe 3s infinite 8s;
     transform-origin: 50% 100%;
   }
 
@@ -176,7 +195,7 @@ p {
     height: 28.078818%;
     top: 46%;
     left: 5%;
-    animation: breathe 3.3s infinite .5s;
+    animation: breathe 3.3s infinite 8.5s;
     transform-origin: 50% 100%;
   }
 
@@ -185,7 +204,7 @@ p {
     height: 13.823892%;
     top: 64.7%;
     left: 54.3%;
-    animation: breathe 3s infinite .2s;
+    animation: breathe 3s infinite 8.2s;
     transform-origin: 50% 100%;
   }
 
@@ -203,7 +222,7 @@ p {
     height: 40.024631%;
     top: 34.5%;
     left: 67%;
-    animation: breathe 3s infinite .2s;
+    animation: breathe 3s infinite 8.2s;
     transform-origin: 50% 100%;
   }
 
@@ -212,7 +231,7 @@ p {
     height: 14.963054%;
     top: 28.5%;
     left: 6.5%;
-    animation: breathe 3s infinite;
+    animation: breathe 3s infinite 8s;
     transform-origin: 50% 100%;
   }
 
@@ -221,6 +240,12 @@ p {
     height: 27.555419%;
     left: 23%;
     top: 15.4%;
+    animation: hradec 5.5s forwards 4s;
+
+    @keyframes hradec {
+      0% { transform: translateY(200%) }
+      100% { transform: translateY(0) }
+    }
   }
 
   .karkulka {
@@ -228,8 +253,38 @@ p {
     height: 5.295567%;
     left: 36%;
     top: 50.4%;
-    animation: walk 1s infinite;
     transform-origin: 50% 100%;
+    animation: karkulkaZpet 5s linear forwards;
+    cursor: pointer;
+
+    &.na-kopci {
+      animation: karkulka 5s linear forwards;
+    }
+
+    @keyframes karkulka {
+      0% { transform: translate(0) rotate(-4deg) }
+      20% { transform: translate(220%, -130%); opacity: 1; }
+      25% { opacity: 0 }
+      30% { transform: translate(280%, -90%) scale(.8); }
+      50% { transform: translate(520%, -40%) scale(.8); opacity: 0; }
+      60% { opacity: 1}
+      100% { transform: translate(1100%, -220%) scale(.8)}
+    }
+    @keyframes karkulkaZpet {
+      0% { transform: translate(1100%, -220%) scale(.8)}
+      40% { opacity: 1}
+      50% { transform: translate(520%, -40%) scale(.8); opacity: 0; }
+      70% { transform: translate(280%, -90%) scale(.8); }
+      75% { opacity: 0 }
+      80% { transform: translate(220%, -130%); opacity: 1; }
+      100% { transform: translate(0) rotate(-4deg) }
+    }
+
+    @keyframes walk {
+      0% { transform: rotate(-4deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-4deg); }
+    }
   }
 
   .hrib1 {
@@ -246,12 +301,6 @@ p {
     top: 71.4%;
     //max 6496 x 3248
     //231 × 209
-  }
-
-  @keyframes walk {
-    0% { transform: rotate(-4deg); }
-    50% { transform: rotate(2deg); }
-    100% { transform: rotate(-4deg); }
   }
 
   @keyframes breathe {

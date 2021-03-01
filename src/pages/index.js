@@ -20,15 +20,15 @@ const IndexPage = () => {
     const [ playWolf ] = useSound(wolfSFX)
     const [ playWolf2 ] = useSound(wolf2SFX)
     const [ playForest ] = useSound(forestSFX, { volume: .3, loop: true })
+    const [ hasStarted, setHasStarted ] = useState(false)
+    const [ isStarting, setIsStarting ] = useState(false)
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
-    const [ forestPlaying, setForestPlaying ] = useState(false)
 
 
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 8000)
-
+        setTimeout(() => setIsLoading(false), 5000)
         calculateVH()
         window.addEventListener('resize', calculateVH)
     }, [])
@@ -42,29 +42,35 @@ const IndexPage = () => {
         }, 200)
     }
 
-    const handleMouseEnter = () => {
-        if(forestPlaying) return
+    const start = () => {
+        setIsStarting(true)
         playForest()
-        setForestPlaying(true)
+        setTimeout(() => {
+            // setIsStarting(false)
+            setHasStarted(true)
+        }, 4000)
     }
 
     const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
     const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-    const trans1 = (x, y) => `translate3d(${x / 500}px,${y / 500}px,0)`
-    const trans2 = (x, y) => `translate3d(${x / 200}px,${y / 200}0px,0)`
-    const trans3 = (x, y) => `translate3d(${x / 100}px,${y / 100}0px,0)`
+    const trans1 = (x, y) => hasStarted ? `translate3d(${x / 500}px,${y / 500}px,0)` : 'none'
+    const trans2 = (x, y) => hasStarted ? `translate3d(${x / 200}px,${y / 200}0px,0)` : 'none'
+    const trans3 = (x, y) => hasStarted ? `translate3d(${x / 100}px,${y / 100}0px,0)` : 'none'
 
     return (
         <main className="buk">
             <title>Home Page</title>
 
-            {isLoading && (
-                <div className="loading">
-                    <h1>Načítám</h1>
+            {!hasStarted && (
+                <div className={classNames(['splash', isStarting && 'starting'])}>
+                    <div className="inner">
+                        <h1 className={classNames([isLoading && 'visible'])}>Načítám</h1>
+                        <button className={classNames([!isLoading && !isStarting && 'visible'])} onClick={start}>Spustit</button>
+                    </div>
                 </div>
             )}
 
-            <div className="scene" onMouseEnter={handleMouseEnter} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+            <div className={classNames(['scene', (isStarting || hasStarted) && 'with-anim'])} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
                 <div className={classNames(['obj bg', isFullMoon && 'uplnek'])}>
                     <img src="/img/pozadi.png" />
                 </div>

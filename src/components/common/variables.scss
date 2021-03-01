@@ -3,3 +3,15 @@ $desktop: 1080px;
 
 $facebook: #3b5998;
 $google: #ea4335;
+
+@function w($w) {
+  $vw: 6496;
+
+  @return $w / $vw * 100 * 1%;
+}
+
+@function h($h) {
+  $vh: 3248;
+
+  @return $h / $vh * 100 * 1%;
+}

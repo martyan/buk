@@ -85,11 +85,10 @@ p {
   height: calc(100 * var(--vh));
   background: white;
   animation: scene 6s forwards 4s;
-  //transform: scale(1.05);
 
   @keyframes scene {
-    0% { transform: translateY(-20%) }
-    100% { transform: translateY(0) }
+    0% { transform: translateY(-10%) }
+    100% { transform: translateY(0) scale(1.02) }
   }
 
   img {
@@ -168,34 +167,34 @@ p {
   }
 
   .kopec1 {
-    width: 64.362685%;
-    height: 61.422414%;
+    width: w(4181);
+    height: h(1995);
     left: 0;
     top: 26%;
     animation: kopec 5s forwards 4s;
 
     @keyframes kopec {
-      0% { transform: translateY(70%) }
+      0% { transform: translateY(35%) }
       100% { transform: translateY(0) }
     }
   }
 
   .kopec2 {
-    width: 36.499384%;
-    height: 10.5152%;
+    width: w(2371);
+    height: h(951);
     left: 41%;
     top: 40%;
     animation: kopec2 5s forwards 4s;
 
     @keyframes kopec2 {
-      0% { transform: translateY(500%) }
+      0% { transform: translateY(250%) }
       100% { transform: translateY(0) }
     }
   }
 
   .ovce1 {
-    width: 17.31835%;
-    height: 36.330049%;
+    width: w(1125);
+    height: h(1180);
     top: 60%;
     left: 16%;
     animation: breathe 3s infinite 8s;
@@ -203,8 +202,8 @@ p {
   }
 
   .ovce2 {
-    width: 14.19335%;
-    height: 28.078818%;
+    width: w(922);
+    height: h(912);
     top: 46%;
     left: 5%;
     animation: breathe 3.3s infinite 8.5s;
@@ -212,8 +211,8 @@ p {
   }
 
   .sova {
-    width: 8.636084%;
-    height: 13.823892%;
+    width: w(561);
+    height: h(449);
     top: 64.7%;
     left: 54.3%;
     animation: breathe 3s infinite 8.2s;
@@ -221,8 +220,8 @@ p {
   }
 
   .netopyr {
-    width: 5.080049%;
-    height: 19.673645%;
+    width: w(330);
+    height: h(639);
     top: 9%;
     left: 58.5%;
     animation: breathe 3s infinite;
@@ -230,8 +229,8 @@ p {
   }
 
   .vlk {
-    width: 19.950739%;
-    height: 40.024631%;
+    width: w(1296);
+    height: h(1300);
     top: 34.5%;
     left: 67%;
     animation: breathe 3s infinite 8.2s;
@@ -239,8 +238,8 @@ p {
   }
 
   .vlk2 {
-    width: 5.557266%;
-    height: 14.963054%;
+    width: w(361);
+    height: h(486);
     top: 28.5%;
     left: 6.5%;
     animation: breathe 3s infinite 8s;
@@ -248,21 +247,21 @@ p {
   }
 
   .hradec {
-    width: 10.544951%;
-    height: 27.555419%;
+    width: w(685);
+    height: h(895);
     left: 23%;
     top: 15.4%;
     animation: hradec 5.5s forwards 4s;
 
     @keyframes hradec {
-      0% { transform: translateY(200%) }
+      0% { transform: translateY(100%) }
       100% { transform: translateY(0) }
     }
   }
 
   .karkulka {
-    width: 1.616379%;
-    height: 5.295567%;
+    width: w(105);
+    height: h(172);
     left: 36%;
     top: 50.4%;
     transform-origin: 50% 100%;
@@ -280,10 +279,10 @@ p {
       30% { transform: translate(280%, -90%) scale(.8); }
       50% { transform: translate(520%, -40%) scale(.8); opacity: 0; }
       60% { opacity: 1}
-      100% { transform: translate(1100%, -220%) scale(.8)}
+      100% { transform: translate(1100%, -250%) scale(.8)}
     }
     @keyframes karkulkaZpet {
-      0% { transform: translate(1100%, -220%) scale(.8)}
+      0% { transform: translate(1100%, -250%) scale(.8)}
       40% { opacity: 1}
       50% { transform: translate(520%, -40%) scale(.8); opacity: 0; }
       70% { transform: translate(280%, -90%) scale(.8); }
@@ -300,19 +299,17 @@ p {
   }
 
   .hrib1 {
-    width: 5.15702%;
-    height: 11.391626%;
+    width: w(335);
+    height: h(370);
     left: 41%;
     top: 67.4%;
   }
 
   .hrib2 {
-    width: 3.55713%;
-    height: 6.434729%;
+    width: w(231);
+    height: h(209);
     left: 46%;
     top: 71.4%;
-    //max 6496 x 3248
-    //231 × 209
   }
 
   @keyframes breathe {

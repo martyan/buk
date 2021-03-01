@@ -187,7 +187,7 @@ p {
     animation: kopec2 5s forwards 4s;
 
     @keyframes kopec2 {
-      0% { transform: translateY(250%) }
+      0% { transform: translateY(150%) }
       100% { transform: translateY(0) }
     }
   }
@@ -310,6 +310,167 @@ p {
     height: h(209);
     left: 46%;
     top: 71.4%;
+  }
+
+  .o1 {
+    width: w(169);
+    height: h(139);
+    left: 20%;
+    top: 38%;
+  }
+
+  .o2 {
+    width: w(167);
+    height: h(140);
+    left: 21%;
+    top: 46.4%;
+  }
+
+  .o3 {
+    width: w(211);
+    height: h(154);
+    left: 25%;
+    top: 43.4%;
+  }
+
+  .o4 {
+    width: w(171);
+    height: h(140);
+    left: 26%;
+    top: 51%;
+  }
+
+  .o5 {
+    width: w(170);
+    height: h(154);
+    left: 29%;
+    top: 42.4%;
+  }
+
+  .o6 {
+    width: w(176);
+    height: h(171);
+    left: 31%;
+    top: 47.4%;
+  }
+
+  .o7 {
+    width: w(180);
+    height: h(206);
+    left: 31%;
+    top: 59%;
+  }
+
+  .o8 {
+    width: w(181);
+    height: h(153);
+    left: 33%;
+    top: 55%;
+  }
+
+  .o9 {
+    width: w(131);
+    height: h(238);
+    left: 35.6%;
+    top: 61.4%;
+  }
+
+  .o10 {
+    width: w(204);
+    height: h(193);
+    left: 35.6%;
+    top: 57%;
+  }
+
+  .o11 {
+    width: w(171);
+    height: h(165);
+    left: 41%;
+    top: 52.4%;
+  }
+
+  .o12 {
+    width: w(164);
+    height: h(158);
+    left: 41%;
+    top: 52.4%;
+  }
+
+  .m1 {
+    width: w(81);
+    height: h(78);
+    left: 52.5%;
+    top: 44%;
+  }
+
+  .m2 {
+    width: w(78);
+    height: h(87);
+    left: 52%;
+    top: 48.4%;
+  }
+
+  .m3 {
+    width: w(85);
+    height: h(88);
+    left: 54%;
+    top: 48.4%;
+  }
+
+  .m4 {
+    width: w(80);
+    height: h(84);
+    left: 54%;
+    top: 52%;
+  }
+
+  .m5 {
+    width: w(106);
+    height: h(79);
+    left: 56.4%;
+    top: 49%;
+  }
+
+  .m6 {
+    width: w(103);
+    height: h(80);
+    left: 56.5%;
+    top: 53.4%;
+  }
+
+  .m7 {
+    width: w(95);
+    height: h(75);
+    left: 58.5%;
+    top: 47%;
+  }
+
+  .m8 {
+    width: w(87);
+    height: h(70);
+    left: 59%;
+    top: 50%;
+  }
+
+  .m9 {
+    width: w(90);
+    height: h(72);
+    left: 60.6%;
+    top: 48.4%;
+  }
+
+  .m10 {
+    width: w(97);
+    height: h(74);
+    left: 60.6%;
+    top: 53%;
+  }
+
+  .m11 {
+    width: w(82);
+    height: h(76);
+    left: 60.6%;
+    top: 53%;
   }
 
   @keyframes breathe {

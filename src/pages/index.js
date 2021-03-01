@@ -19,7 +19,7 @@ const IndexPage = () => {
     const [ playSheep2 ] = useSound(sheep2SFX)
     const [ playWolf ] = useSound(wolfSFX)
     const [ playWolf2 ] = useSound(wolf2SFX)
-    const [ playForest ] = useSound(forestSFX, { volume: .3 })
+    const [ playForest ] = useSound(forestSFX, { volume: .3, loop: true })
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
@@ -50,9 +50,9 @@ const IndexPage = () => {
 
     const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
     const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-    const trans1 = (x, y) => `translate3d(${x / 500}px,${y / 500}px,0)`
-    const trans2 = (x, y) => `translate3d(${x / 200}px,${y / 200}0px,0)`
-    const trans3 = (x, y) => `translate3d(${x / 100}px,${y / 100}0px,0)`
+    const trans1 = (x, y) => 'none' //`translate3d(${x / 500}px,${y / 500}px,0)`
+    const trans2 = (x, y) => 'none' //`translate3d(${x / 200}px,${y / 200}0px,0)`
+    const trans3 = (x, y) => 'none' //`translate3d(${x / 100}px,${y / 100}0px,0)`
 
     return (
         <main className="buk">
@@ -66,26 +66,145 @@ const IndexPage = () => {
 
             <div className="scene" onMouseEnter={handleMouseEnter} onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
                 <div className={classNames(['obj bg', isFullMoon && 'uplnek'])}>
-                    <img src="/img/pozadi.png" alt=""/>
+                    <img src="/img/pozadi.png" />
                 </div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans1) }}>
                     <div className="obj kopec2">
-                        <img src="/img/kopec2.png" alt=""/>
+                        <img src="/img/kopec2.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
                     <div className="obj hradec">
-                        <img src="/img/hrad.png" alt=""/>
+                        <img src="/img/hrad.png" />
+                    </div>
+                </animated.div>
+
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj kopec1">
+                        <img src="/img/kopec.png" />
+                    </div>
+                </animated.div>
+
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o1">
+                        <img src="/img/o1.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
-                    <div className="obj kopec1">
-                        <img src="/img/kopec.png" alt=""/>
+                    <div className="obj o2">
+                        <img src="/img/o2.png" />
                     </div>
                 </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o3">
+                        <img src="/img/o3.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o4">
+                        <img src="/img/o4.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o5">
+                        <img src="/img/o5.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o6">
+                        <img src="/img/o6.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o7">
+                        <img src="/img/o7.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o8">
+                        <img src="/img/o8.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o9">
+                        <img src="/img/o9.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o10">
+                        <img src="/img/o10.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o11">
+                        <img src="/img/o11.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj o12">
+                        <img src="/img/o12.png" />
+                    </div>
+                </animated.div>
+
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m1">
+                        <img src="/img/m1.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m2">
+                        <img src="/img/m2.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m3">
+                        <img src="/img/m3.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m4">
+                        <img src="/img/m4.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m5">
+                        <img src="/img/m5.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m6">
+                        <img src="/img/m6.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m7">
+                        <img src="/img/m7.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m8">
+                        <img src="/img/m8.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m9">
+                        <img src="/img/m9.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m10">
+                        <img src="/img/m10.png" />
+                    </div>
+                </animated.div>
+                <animated.div className="anim" style={{ transform: props.xy.interpolate(trans2) }}>
+                    <div className="obj m11">
+                        <img src="/img/m11.png" />
+                    </div>
+                </animated.div>
+
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj fg">
-                        <img src="/img/popredi.png" alt=""/>
+                        <img src="/img/popredi.png" />
                     </div>
                 </animated.div>
 
@@ -93,48 +212,48 @@ const IndexPage = () => {
 
                 <animated.div className="anim" onClick={() => setIsOnTheHill(!isOnTheHill)} style={{ transform: props.xy.interpolate(trans2) }}>
                     <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci'])}>
-                        <img src="/img/karkulka.png" alt=""/>
+                        <img src="/img/karkulka.png" />
                     </div>
                 </animated.div>
 
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj ovce1" onClick={playSheep}>
-                        <img src="/img/ovce.png" alt=""/>
+                        <img src="/img/ovce.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj ovce2" onClick={playSheep2}>
-                        <img src="/img/ovce2.png" alt=""/>
+                        <img src="/img/ovce2.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj sova" onClick={playOwl}>
-                        <img src="/img/sova.png" alt=""/>
+                        <img src="/img/sova.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj netopyr" onClick={playBat}>
-                        <img src="/img/netopyr.png" alt=""/>
+                        <img src="/img/netopyr.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj vlk" onClick={playWolf}>
-                        <img src="/img/vlk.png" alt=""/>
+                        <img src="/img/vlk.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj vlk2" onClick={playWolf2}>
-                        <img src="/img/vlk2.png" alt=""/>
+                        <img src="/img/vlk2.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj hrib1">
-                        <img src="/img/hrib.png" alt=""/>
+                        <img src="/img/hrib.png" />
                     </div>
                 </animated.div>
                 <animated.div className="anim" style={{ transform: props.xy.interpolate(trans3) }}>
                     <div className="obj hrib2">
-                        <img src="/img/hrib2.png" alt=""/>
+                        <img src="/img/hrib2.png" />
                     </div>
                 </animated.div>
             </div>

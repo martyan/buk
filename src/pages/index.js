@@ -22,7 +22,7 @@ const IndexPage = () => {
     const [ playForest ] = useSound(forestSFX, { volume: .3, loop: true })
     const [ hasStarted, setHasStarted ] = useState(false)
     const [ isStarting, setIsStarting ] = useState(false)
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [ isLoading, setIsLoading ] = useState(false)
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
 
@@ -80,37 +80,37 @@ const IndexPage = () => {
                     <div className="obj kopec2">
                         <img src="/img/kopec2.png" />
                     </div>
-                    <div className="obj m1">
+                    <div className="obj m m1">
                         <img src="/img/m1.png" />
                     </div>
-                    <div className="obj m2">
+                    <div className="obj m m2">
                         <img src="/img/m2.png" />
                     </div>
-                    <div className="obj m3">
+                    <div className="obj m m3">
                         <img src="/img/m3.png" />
                     </div>
-                    <div className="obj m4">
+                    <div className="obj m m4">
                         <img src="/img/m4.png" />
                     </div>
-                    <div className="obj m5">
+                    <div className="obj m m5">
                         <img src="/img/m5.png" />
                     </div>
-                    <div className="obj m6">
+                    <div className="obj m m6">
                         <img src="/img/m6.png" />
                     </div>
-                    <div className="obj m7">
+                    <div className="obj m m7">
                         <img src="/img/m7.png" />
                     </div>
-                    <div className="obj m8">
+                    <div className="obj m m8">
                         <img src="/img/m8.png" />
                     </div>
-                    <div className="obj m9">
+                    <div className="obj m m9">
                         <img src="/img/m9.png" />
                     </div>
-                    <div className="obj m10">
+                    <div className="obj m m10">
                         <img src="/img/m10.png" />
                     </div>
-                    <div className="obj m11">
+                    <div className="obj m m11">
                         <img src="/img/m11.png" />
                     </div>
                 </animated.div>
@@ -125,40 +125,40 @@ const IndexPage = () => {
                     <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci'])} onClick={() => setIsOnTheHill(!isOnTheHill)}>
                         <img src="/img/karkulka.png" />
                     </div>
-                    <div className="obj o1">
+                    <div className="obj o o1">
                         <img src="/img/o1.png" />
                     </div>
-                    <div className="obj o2">
+                    <div className="obj o o2">
                         <img src="/img/o2.png" />
                     </div>
-                    <div className="obj o3">
+                    <div className="obj o o3">
                         <img src="/img/o3.png" />
                     </div>
-                    <div className="obj o4">
+                    <div className="obj o o4">
                         <img src="/img/o4.png" />
                     </div>
-                    <div className="obj o5">
+                    <div className="obj o o5">
                         <img src="/img/o5.png" />
                     </div>
-                    <div className="obj o6">
+                    <div className="obj o o6">
                         <img src="/img/o6.png" />
                     </div>
-                    <div className="obj o7">
+                    <div className="obj o o7">
                         <img src="/img/o7.png" />
                     </div>
-                    <div className="obj o8">
+                    <div className="obj o o8">
                         <img src="/img/o8.png" />
                     </div>
-                    <div className="obj o9">
+                    <div className="obj o o9">
                         <img src="/img/o9.png" />
                     </div>
-                    <div className="obj o10">
+                    <div className="obj o o10">
                         <img src="/img/o10.png" />
                     </div>
-                    <div className="obj o11">
+                    <div className="obj o o11">
                         <img src="/img/o11.png" />
                     </div>
-                    <div className="obj o12">
+                    <div className="obj o o12">
                         <img src="/img/o12.png" />
                     </div>
                 </animated.div>

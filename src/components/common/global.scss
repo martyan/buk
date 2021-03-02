@@ -122,16 +122,15 @@ p {
   width: calc(200 * var(--vh));
   height: calc(100 * var(--vh));
   background: white;
+  transform: translateY(-8%);
+  transition: transform 5s ease 1s;
 
   &.with-anim {
 
-    animation: scene 6s forwards;
+    transform: translateY(0) scale(1.02);
 
-    .kopec1 {
-      animation: kopec 5s forwards;
-    }
-    .kopec2 {
-      animation: kopec2 5s forwards;
+    .kopec1, .kopec2, .hradec, .karkulka, .o, .m {
+      transform: translateY(0);
     }
 
     .ovce1 {
@@ -158,15 +157,14 @@ p {
       animation: breathe 3s infinite 4.1s;
     }
 
-    .hradec {
-      animation: hradec 5.5s forwards;
-    }
-
     .karkulka {
+      //animation: karkulkaZpet 5s linear forwards;
       //animation: karkulkaZpet 5s linear alternate forwards;
       //animation-play-state: paused;
 
       &.na-kopci {
+        //animation: karkulka 5s linear forwards;
+
         //animation: karkulka 5s linear alternate;
         //animation-direction: normal;
         //animation-
@@ -175,26 +173,10 @@ p {
       }
     }
 
-    @keyframes scene {
-      0% { transform: translateY(-5%) }
-      100% { transform: translateY(0) scale(1.02) }
-    }
     @keyframes breathe {
       0% { transform: scale(1); }
       50% { transform: scale(1.025); }
       100% { transform: scale(1); }
-    }
-    @keyframes kopec {
-      0% { transform: translateY(35%) }
-      100% { transform: translateY(0) }
-    }
-    @keyframes kopec2 {
-      0% { transform: translateY(80%) }
-      100% { transform: translateY(0) }
-    }
-    @keyframes hradec {
-      0% { transform: translateY(100%) }
-      100% { transform: translateY(0) }
     }
     @keyframes karkulka {
       0% { transform: translate(0) rotate(-4deg) }
@@ -302,6 +284,8 @@ p {
     height: h(1995);
     left: 0;
     top: 26%;
+    transform: translateY(30%);
+    transition: transform 4s ease 1s;
   }
 
   .kopec2 {
@@ -309,6 +293,17 @@ p {
     height: h(951);
     left: 40.9%;
     top: 40.3%;
+    transform: translateY(70%);
+    transition: transform 4s ease 1s;
+  }
+
+  .hradec {
+    width: w(685);
+    height: h(895);
+    left: 23%;
+    top: 15.4%;
+    transform: translateY(90%);
+    transition: transform 4s ease 1s;
   }
 
   .ovce1 {
@@ -359,13 +354,6 @@ p {
     transform-origin: 50% 100%;
   }
 
-  .hradec {
-    width: w(685);
-    height: h(895);
-    left: 23%;
-    top: 15.4%;
-  }
-
   .karkulka {
     width: w(105);
     height: h(172);
@@ -373,6 +361,8 @@ p {
     top: 50.4%;
     transform-origin: 50% 100%;
     cursor: pointer;
+    transition: transform 4s ease 1s;
+    transform: translateY(400%);
   }
 
   .hrib1 {
@@ -387,6 +377,16 @@ p {
     height: h(209);
     left: 46%;
     top: 71.4%;
+  }
+
+  .o {
+    transition: transform 4s ease 1s;
+    transform: translateY(400%);
+  }
+
+  .m {
+    transition: transform 4s ease 1s;
+    transform: translateY(1000%);
   }
 
   .o1 {

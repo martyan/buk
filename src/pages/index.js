@@ -196,7 +196,6 @@ const IndexPage = () => {
                 </animated.div>
 
                 <animated.div className="anim anim-s" style={{ transform: props.xy.interpolate(trans1) }}>
-                    <div className="obj s s4 sm"></div>
                     <div className="obj s s5 sm"></div>
                     <div className="obj s s7 sm"></div>
                 </animated.div>
@@ -205,6 +204,7 @@ const IndexPage = () => {
                     <div className="obj s s1 m"></div>
                     <div className="obj s s2 m"></div>
                     <div className="obj s s3 m"></div>
+                    <div className="obj s s4 m"></div>
                     <div className="obj s s11 m"></div>
                 </animated.div>
 

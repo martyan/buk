@@ -173,6 +173,31 @@ p {
       }
     }
 
+    .s {
+      animation: fly 7s infinite 4.1s linear;
+    }
+
+    .s1 { animation-delay: 44s; }
+    .s2 { animation-delay: 18s; }
+    .s3 { animation-delay: 6s; }
+    .s4 { animation-delay: 22s; }
+    .s5 { animation-delay: 10s; }
+    .s6 { animation-delay: 32s; }
+    .s7 { animation-delay: 27s; }
+    .s8 { animation-delay: 5s; }
+    .s9 { animation-delay: 19s; }
+    .s10 { animation-delay: 13s; }
+
+    @keyframes fly {
+      0% { opacity: 1; }
+      30% { opacity: 1; }
+      35% { opacity: .6; }
+      40% { opacity: .2; }
+      45% { opacity: .4; }
+      50% { opacity: .8; }
+      100% { opacity: 1; }
+    }
+
     @keyframes breathe {
       0% { transform: scale(1); }
       50% { transform: scale(1.025); }
@@ -599,8 +624,8 @@ p {
   }
 
   .s5 {
-    left: 81.5%;
-    top: 35%;
+    left: 97.5%;
+    top: 27%;
   }
 
   .s6 {
@@ -609,8 +634,8 @@ p {
   }
 
   .s7 {
-    left: 84%;
-    top: 52%;
+    left: 7%;
+    top: 46%;
   }
 
   .s8 {

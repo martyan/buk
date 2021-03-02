@@ -56,6 +56,8 @@ const IndexPage = () => {
     const trans1 = (x, y) => hasStarted ? `translate3d(${x / 500}px,${y / 500}px,0)` : 'none'
     const trans2 = (x, y) => hasStarted ? `translate3d(${x / 250}px,${y / 250}0px,0)` : 'none'
     const trans3 = (x, y) => hasStarted ? `translate3d(${x / 125}px,${y / 125}0px,0)` : 'none'
+    const trans4 = (x, y) => hasStarted ? `translate3d(${x / 40}px,${y / 40}0px,0)` : 'none'
+    const trans5 = (x, y) => hasStarted ? `translate3d(${x / 20}px,${y / 20}0px,0)` : 'none'
 
     return (
         <main className="buk">
@@ -191,6 +193,26 @@ const IndexPage = () => {
                     <div className="obj hrib2">
                         <img src="/img/hrib2.png" />
                     </div>
+                </animated.div>
+
+                <animated.div className="anim anim-s" style={{ transform: props.xy.interpolate(trans1) }}>
+                    <div className="obj s s4 sm"></div>
+                    <div className="obj s s5 sm"></div>
+                    <div className="obj s s7 sm"></div>
+                </animated.div>
+
+                <animated.div className="anim anim-s" style={{ transform: props.xy.interpolate(trans4) }}>
+                    <div className="obj s s1 m"></div>
+                    <div className="obj s s2 m"></div>
+                    <div className="obj s s3 m"></div>
+                    <div className="obj s s11 m"></div>
+                </animated.div>
+
+                <animated.div className="anim anim-s" style={{ transform: props.xy.interpolate(trans5) }}>
+                    <div className="obj s s6 l"></div>
+                    <div className="obj s s8 l"></div>
+                    <div className="obj s s9 l"></div>
+                    <div className="obj s s10 l"></div>
                 </animated.div>
             </div>
         </main>

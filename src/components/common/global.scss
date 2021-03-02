@@ -550,4 +550,87 @@ p {
     top: 53%;
   }
 
+  .anim-s {
+    z-index: 99;
+  }
+
+  .s {
+    background: rgba(#fff, .9);
+    border-radius: 50%;
+    opacity: .9;
+
+    &.sm {
+      width: 3px;
+      height: 3px;
+      box-shadow: 0 0 3px 3px rgba(yellow, .8);
+    }
+
+    &.m {
+      width: 5px;
+      height: 5px;
+      box-shadow: 0 0 5px 5px rgba(yellow, .8);
+    }
+
+    &.l {
+      width: 8px;
+      height: 8px;
+      box-shadow: 0 0 8px 8px rgba(yellow, .8);
+    }
+  }
+
+  .s1 {
+    left: 80%;
+    top: 70%;
+  }
+
+  .s2 {
+    left: 15%;
+    top: 75%;
+  }
+
+  .s3 {
+    left: 91%;
+    top: 44%;
+  }
+
+  .s4 {
+    left: 3%;
+    top: 63%;
+  }
+
+  .s5 {
+    left: 81.5%;
+    top: 35%;
+  }
+
+  .s6 {
+    left: 94%;
+    top: 32%;
+  }
+
+  .s7 {
+    left: 84%;
+    top: 52%;
+  }
+
+  .s8 {
+    left: 88%;
+    top: 62%;
+  }
+
+  .s9 {
+    left: 96%;
+    top: 52%;
+  }
+
+  .s10 {
+    left: 94%;
+    top: 82%;
+  }
+
+  .s11 {
+    left: 94%;
+    top: 69%;
+  }
+
 }

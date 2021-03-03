@@ -158,18 +158,12 @@ p {
     }
 
     .karkulka {
-      //animation: karkulkaZpet 5s linear forwards;
-      //animation: karkulkaZpet 5s linear alternate forwards;
-      //animation-play-state: paused;
+      &.animovana {
+        animation: karkulkaZpet 5s linear forwards;
+      }
 
       &.na-kopci {
-        //animation: karkulka 5s linear forwards;
-
-        //animation: karkulka 5s linear alternate;
-        //animation-direction: normal;
-        //animation-
-        //animation: karkulka 5s linear forwards;
-        //animation-play-state: running;
+        animation: karkulka 5s linear forwards;
       }
     }
 

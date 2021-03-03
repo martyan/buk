@@ -25,6 +25,7 @@ const IndexPage = () => {
     const [ isLoading, setIsLoading ] = useState(true)
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
+    const [ isAnimated, setIsAnimated ] = useState(false)
 
 
     useEffect(() => {
@@ -49,6 +50,11 @@ const IndexPage = () => {
             // setIsStarting(false)
             setHasStarted(true)
         }, 4000)
+    }
+
+    const handleCarcoolClick = () => {
+        setIsOnTheHill(!isOnTheHill)
+        setIsAnimated(true)
     }
 
     const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }))
@@ -349,7 +355,7 @@ const IndexPage = () => {
                     <div className="obj kopec1">
                         <img src="/img/kopec.png" />
                     </div>
-                    <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci'])} onClick={() => setIsOnTheHill(!isOnTheHill)}>
+                    <div className={classNames(['obj karkulka', isOnTheHill && 'na-kopci', isAnimated && 'animovana'])} onClick={handleCarcoolClick}>
                         <img src="/img/karkulka.png" />
                     </div>
                     <div className="obj o o1">

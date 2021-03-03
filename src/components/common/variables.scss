@@ -15,3 +15,15 @@ $google: #ea4335;
 
   @return $h / $vh * 100 * 1%;
 }
+
+@mixin ssPos {
+  //left: (random(60) + 20) * 1%;
+  left: random(1000 * 100) / 1000 * 1%;
+  top: random(40) * 1%;
+}
+
+@mixin ss {
+  @for $i from 1 through 200 {
+    .ss#{$i} { @include ssPos; }
+  }
+}

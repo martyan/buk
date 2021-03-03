@@ -194,13 +194,13 @@ p {
       35% { opacity: .6; }
       40% { opacity: .2; }
       45% { opacity: .4; }
-      50% { opacity: .8; }
+      50% { opacity: 1; }
       100% { opacity: 1; }
     }
 
     @keyframes breathe {
       0% { transform: scale(1); }
-      50% { transform: scale(1.025); }
+      50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
     @keyframes karkulka {
@@ -253,6 +253,10 @@ p {
     pointer-events: none !important;
   }
 
+  .mesic, .karkulka, .ovce1, .ovce2, .sova, .netopyr, .hrib1, .hrib2, .vlk, .vlk2 {
+    cursor: pointer;
+  }
+
   .bg {
     top: 0;
     left: 0;
@@ -290,17 +294,17 @@ p {
   }
 
   .mesic {
-    width: 6.157635%;
-    height: 12.315271%;
-    top: 13.5%;
-    left: 36.33%;
+    width: w(1209);
+    height: h(1084);
+    top: 4%;
+    left: 30%;
     border-radius: 50%;
-    cursor: pointer;
-    //background: black;
-    //opacity: 1;
+    z-index: 99;
+    opacity: .7;
+    transition: opacity 1s ease;
 
     &.uplnek {
-      //opacity: 0;
+      opacity: 1;
     }
   }
 
@@ -385,7 +389,6 @@ p {
     left: 36%;
     top: 50.4%;
     transform-origin: 50% 100%;
-    cursor: pointer;
     transition: transform 4s ease 1s;
     transform: translateY(400%);
   }
@@ -577,6 +580,89 @@ p {
 
   .anim-s {
     z-index: 99;
+  }
+
+  .ss {
+    background: rgba(#FFECA0, .7);
+    border-radius: 50%;
+    opacity: .9;
+
+    &.sssm {
+      width: 1.2px;
+      height: 1.2px;
+    }
+
+    &.ssm {
+      width: 1.5px;
+      height: 1.5px;
+      box-shadow: 0 0 10px 6px rgba(yellow, .2);
+      z-index: 99;
+    }
+
+    &.ssl {
+      width: 2.7px;
+      height: 2.7px;
+      box-shadow: 0 0 10px 6px rgba(yellow, .2);
+      z-index: 99;
+    }
+  }
+
+  @include ss;
+
+  .ss201 {
+    left: 49%;
+    top: 6%;
+  }
+
+  .ss202 {
+    left: 2%;
+    top: 22%;
+  }
+
+  .ss203 {
+    left: 30%;
+    top: 22%;
+  }
+
+  .ss204 {
+    left: 68%;
+    top: 30%;
+  }
+
+  .ss205 {
+    left: 34%;
+    top: 4%;
+  }
+
+
+
+  .ss213 {
+    left: 41.3%;
+    top: 39%;
+  }
+  .ss214 {
+    left: 42.3%;
+    top: 33.3%;
+  }
+  .ss215 {
+    left: 44.9%;
+    top: 29.4%;
+  }
+  .ss216 {
+    left: 57.7%;
+    top: 28.2%;
+  }
+  .ss217 {
+    left: 53.1%;
+    top: 33.6%;
+  }
+  .ss218 {
+    left: 56.4%;
+    top: 17%;
+  }
+  .ss219 {
+    left: 48.3%;
+    top: 27.1%;
   }
 
   .s {

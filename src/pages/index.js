@@ -282,11 +282,11 @@ const IndexPage = () => {
                 <div className="obj ss ss203 ssm"></div>
                 <div className="obj ss ss204 ssm"></div>
                 <div className="obj ss ss205 ssm"></div>
-                <div className="obj ss ss206 ssm"></div>
-                <div className="obj ss ss207 ssm"></div>
-                <div className="obj ss ss208 ssm"></div>
-                <div className="obj ss ss209 ssm"></div>
-                <div className="obj ss ss210 ssm"></div>
+                <div className="obj ss ss206 ssf"></div>
+                <div className="obj ss ss207 ssf"></div>
+                <div className="obj ss ss208 ssf"></div>
+                <div className="obj ss ss209 ssf"></div>
+                <div className="obj ss ss210 ssf"></div>
                 <div className="obj ss ss211 ssm"></div>
                 <div className="obj ss ss212 ssm"></div>
                 <div className="obj ss ss213 ssl"></div>

@@ -26,7 +26,8 @@ const IndexPage = () => {
     const [ isFullMoon, setIsFullMoon ] = useState(true)
     const [ isOnTheHill, setIsOnTheHill ] = useState(false)
     const [ isAnimated, setIsAnimated ] = useState(false)
-
+    const [ shroom, setShroom ] = useState(4)
+    const [ shroom2, setShroom2 ] = useState(4)
 
     useEffect(() => {
         setTimeout(() => setIsLoading(false), 5000)
@@ -50,6 +51,16 @@ const IndexPage = () => {
             // setIsStarting(false)
             setHasStarted(true)
         }, 4000)
+    }
+
+    const handleShroomClick = () => {
+        const shroomsCount = 6
+        setShroom(shroom + 1 > shroomsCount ? 1 : shroom + 1)
+    }
+
+    const handleShroom2Click = () => {
+        const shroomsCount = 6
+        setShroom2(shroom2 - 1 <= 0 ? shroomsCount : shroom2 - 1)
     }
 
     const handleCarcoolClick = () => {
@@ -418,11 +429,11 @@ const IndexPage = () => {
                     <div className="obj vlk2" onClick={playWolf2}>
                         <img src="/img/vlk2.png" />
                     </div>
-                    <div className="obj hrib1">
-                        <img src="/img/hrib.png" />
+                    <div className="obj hrib1" onClick={handleShroomClick}>
+                        <img src={`/img/h${shroom}.png`} />
                     </div>
-                    <div className="obj hrib2">
-                        <img src="/img/hrib2.png" />
+                    <div className="obj hrib2" onClick={handleShroom2Click}>
+                        <img src={`/img/hh${shroom2}.png`} />
                     </div>
                 </animated.div>
 
